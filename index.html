@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Montserrat:wght@300&family=Vollkorn:ital,wght@0,600;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Montserrat:wght@300&family=Poppins:wght@500&family=Vollkorn:ital,wght@0,600;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main"> 
+        <div class="header">
+            <h1 class="logo"> JobKickstart</h1>
+            <button id="menu-button"><img class="image_button" src="white-button.png" alt="menu_button"></button>
+        </div>
+        <div class="menu">
+          <ul class="ul" id="menu">
+            <li><a class="button" href="index.html">Home</a></li>
+            <li><a class="button" href="#">Offers</a></li>
+            <li><a class="button" href="#">My profile</a></li>
+            <li><a class="button" href="sign_in.html">Sign in</a></li>
+            <li><a class="button" href="#">Browse</a></li>
+            <li><a class="button" href="#">Search</a></li>
+          </ul>
+        </div>
+      <div class="main-1"> 
+        <div class="landing_page">
+          <img class ="guys" src ="students.png" alt="landingpage-image"> 
+          <div class="text">
+            
+          <p class="landing_text">Kickstart your career in the most growing indusry today!</p>
+          <p class="landing_text1">Be the future!</p>
+        </div>
+       
+        </div>
+    </div>
+ 
+    <div class="main">
+    <div class = "text-part">
+    
+      <p class="homepage-text">Are you a student searching for exciting internships or part-time job opportunities to kickstart your career? Look no further! JobKickstart is here to help you find the perfect position that matches your skills, interests, and schedule.</p>
+      <div class="container">
+        <div class="job-box">
+            <h3>Data Analyst</h3>
+            <h2>$90,000 - $130,000</h3>
+            <img  class="container-image" src="data_analyst.avif" alt="Data Analyst Icon">
+        </div>
+        <div class="job-box">
+          <h3>Software Developer</h3>
+          <h2>$80,000 - $120,000</h3>
+          <img  class="container-image" src="developer.png" alt="Data Analyst Icon">
+      </div>
+      <div class="job-box">
+        <h3>Cybersecurity Analyst</h3>
+        <h2>$75,000 - $110,000 </h3>
+        <img  class="container-image" src="cyber.jpeg" alt="Data Analyst Icon">
+    </div>
+      <div class="job-box">
+          <h3>UX/UI Designer</h3>
+          <h2>$70,000 - $100,000</h3>
+          <img  class="container-image" src="designer.webp" alt="Data Analyst Icon">
+      </div>
+      <div class="job-box">
+        <h3>IT Project Manager</h3>
+        <h2>$80,000 - $120,000 </h3>
+        <img  class="container-image" src="manager.avif" alt="Data Analyst Icon">
+    </div>
+    <div class="job-box">
+      <h3>Cloud Engineer</h3>
+      <h2>$90,000 - $130,000 </h3>
+      <img  class="container-image" src="cloud.webp" alt="Data Analyst Icon">
+    </div>
+
+  <!-- <img src="waves.svg" alt="wave"> -->
+    <!-- <h2 class="about-us-title">About Us</h2>
+    <div class="about-us">
+  
+      <p class="about-us-text">JobKickstart is a platform designed to connect students and recent graduates to companies in need of fresh, innovative talent. We work across industries, with a particular focus on the most dynamic sectors such as technology, data science, cybersecurity and project management.</p>
+    </div>
+    <div class="why-us">
+      <h2 class="why-us-title">Why Choose JobKickstart</h2>
+      <p class="why-us-text">JobKickstart's unique platform allows you to create a profile, browse job listings, and apply directly to companies. You can also access resources to enhance your job search, including resume tips, interview techniques, and career advice.</p>
+    </div>
+    <div class="how-it-works">
+      <h2 class="how-it-works-title">How It Works</h2>
+      <p class="how-it-works-text">Simply create your profile, upload your resume, and start browsing for jobs. You can filter jobs by industry, job type, location, and more. When you find a job you're interested in, just hit "Apply" and your resume will be sent directly to the employer.</p>
+    </div>
+    <div class="contact-us">
+      <h2 class="contact-us-title">Contact Us</h2>
+      <p class="contact-us-text">We're always here to help. If you have any questions, need help with your job search, or just want to chat, feel free to reach out to our team at support@jobkickstart.com or call us at (123) 456-7890.</p>
+    </div>
+    </div> -->
+
+    
+
+
+    </div>
+    </div>
+
+<script type="text/javascript">
+var menuButton = document.getElementById("menu-button");
+var menu = document.getElementById("menu");
+
+function openMenu() {
+  menu.classList.add("open");
+  menu.removeEventListener("animationend", closeMenu);
+  menu.addEventListener("animationend", onAnimationEnd);
+}
+
+function closeMenu() {
+  menu.classList.remove("open");
+  menu.removeEventListener("animationend", onAnimationEnd);
+  menu.addEventListener("animationend", closeMenu);
+}
+
+function onAnimationEnd(event) {
+  if (event.animationName === "slide-out") {
+    menu.style.display = "none";
+  }
+}
+
+menuButton.addEventListener("click", function () {
+  if (menu.style.display === "none" || !menu.classList.contains("open")) {
+    menu.style.display = "block";
+    openMenu();
+  } else {
+    closeMenu();
+  }
+});
+
+window.addEventListener('click', function(e){
+  if (!document.getElementById('menu').contains(e.target) && !document.getElementById('menu-button').contains(e.target)){
+    closeMenu();
+  }
+});
+
+var closeButton = document.getElementById("close-button");
+
+closeButton.addEventListener("click", function () {
+  if (menu.style.display === "none" || !menu.classList.contains("open")) {
+    menu.style.display = "block";
+    openMenu();
+  } else {
+    closeMenu();
+  }
+});
+
+
+    </script>
+</body>
+
+</html>

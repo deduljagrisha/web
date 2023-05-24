@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign_in</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="sign_body">
+    <div class="header">
+        <h1 class="logo"> JobKickstart</h1>
+        <button id="menu-button"><img class="image_button" src="white-button.png" alt="menu_button"></button>
+    </div>
+    <div class="menu">
+        <ul class="ul" id="menu">
+          <li><a class="button" href="index.html">Home</a></li>
+          <li><a class="button" href="#">Offers</a></li>
+          <li><a class="button" href="#">My profile</a></li>
+          <li><a class="button" href="sign_in.html">Log in</a></li>
+          <li><a class="button" href="#">Browse</a></li>
+          <li><a class="button" href="#">Search</a></li>
+        </ul>
+    </div>
+
+    <div class="container1"> 
+        <h3 clas="sign1" style="text-align: center;">Sign in</h3>
+        <form action="/submit_signin" method="post">
+    
+            <input type="text" placeholder="Username..." name="uname" required>
+
+            <input type="password" placeholder="Password..." name="psw" required>
+
+            <input type="submit" value="Submit">
+
+            <a class="account" href="registration.html">Don't have an account ?</a>
+        </form>
+    </div>
+
+
+
+
+    </div>
+
+
+    
+
+    <script type="text/javascript">
+        var menuButton = document.getElementById("menu-button");
+        var menu = document.getElementById("menu");
+        
+        function openMenu() {
+          menu.classList.add("open");
+          menu.removeEventListener("animationend", closeMenu);
+          menu.addEventListener("animationend", onAnimationEnd);
+        }
+        
+        function closeMenu() {
+          menu.classList.remove("open");
+          menu.removeEventListener("animationend", onAnimationEnd);
+          menu.addEventListener("animationend", closeMenu);
+        }
+        
+        function onAnimationEnd(event) {
+          if (event.animationName === "slide-out") {
+            menu.style.display = "none";
+          }
+        }
+        
+        menuButton.addEventListener("click", function () {
+          if (menu.style.display === "none" || !menu.classList.contains("open")) {
+            menu.style.display = "block";
+            openMenu();
+          } else {
+            closeMenu();
+          }
+        });
+        
+        window.addEventListener('click', function(e){
+          if (!document.getElementById('menu').contains(e.target) && !document.getElementById('menu-button').contains(e.target)){
+            closeMenu();
+          }
+        });
+        
+        var closeButton = document.getElementById("close-button");
+        
+        closeButton.addEventListener("click", function () {
+          if (menu.style.display === "none" || !menu.classList.contains("open")) {
+            menu.style.display = "block";
+            openMenu();
+          } else {
+            closeMenu();
+          }
+        });
+        
+        
+            </script>
+    </body>
+</html>
